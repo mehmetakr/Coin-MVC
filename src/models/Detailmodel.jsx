@@ -49,7 +49,7 @@ export default class Detailmodel {
             id: 1,
             label: '',
             borderColor:"green",
-            backgroundColor:"yellow",
+            backGroundColor:"yelow",
             data: coin?.history.map((i) => i.priceUsd)
           }, 
     ],
