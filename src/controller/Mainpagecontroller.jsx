@@ -5,14 +5,15 @@ const Mainpagecontroller = () => {
 
 const [coins, setcoins] = useState([]);
 
-const [page ,setpage] = useState();
+const [page ,setpage] = useState(1);
   useEffect(() => {
-    model.getCoins(page).then((data) => setcoins(data));
+
+        // concat da splitde bir birleştirme operatörüdür.. biz diziyi diğer diziye ekler
+    model.getCoins(page).then((data) => setcoins(coins.concat(data)));
 
   },[page]);
 
 
-  console.log(coins);
   return <Mainpageview coins={coins} setpage={setpage} />;
 };
 export default Mainpagecontroller;

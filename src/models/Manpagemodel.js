@@ -4,26 +4,20 @@ import axios from "axios";
 
 // anasayfanın model katmanı
 export default class Mainpagemodel {
-
-    // veriyi alan model katmanı  
+  // veriyi alan model katmanı
   static async getCoins(page) {
-
-const options ={
-
-    params: {
-
+    const options = {
+      params: {
         limit: "15",
-        offset: ( page-1 ) * 15,  // kac tane veri atlanacak 
-    }
-}
-
+        offset: (page - 1) * 15, // kac tane veri atlanacak
+      },
+    };  
 
     try {
       const res = await axios.get("https://api.coincap.io/v2/assets", options);
 
-return res.data.data;
-
-} catch (err) {
+      return res.data.data;
+    } catch (err) {
       console.log(err);
     }
   }
